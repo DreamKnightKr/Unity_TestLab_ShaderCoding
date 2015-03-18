@@ -9,7 +9,7 @@
 		LOD 200
 		
 		CGPROGRAM
-		#pragma surface surf Lambert
+		#pragma surface surf BasicDiffuse
 		
 		// Get Value from "Properies" block
 		float4 	_EmissiveColor;
@@ -26,6 +26,16 @@
 			
 			o.Albedo = c.rgb;
 			o.Alpha = c.a;
+		}
+		
+		inline float4 LightingBasicDiffuse(SurfaceOutput s, fixed3 lightDir, fixed attend)
+		{
+			float difLight = max(0, dot(s.Normal, lightDir));
+		
+			float4 col;
+			col.rgb = s.Albedo * _LightColor0.rgb * (difLight * attend * 2);
+			col.a = s.Alpha;
+			return col;
 		}
 		ENDCG
 	} 
