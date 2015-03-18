@@ -5,6 +5,7 @@
 		_AmbientColor ("Ambient Color", Color) = (1, 1, 1, 1)
 		_MySliderValue ("This is Slider", Range(0, 10)) = 2.5
 		_RampTex ("Ramp Texture", 2D) = "white"{}
+		
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
