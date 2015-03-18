@@ -1,8 +1,10 @@
-﻿Shader "CookBook/BasicDiffuse" {
+﻿Shader "CookBook/BasicDiffuse" 
+{
 	Properties {
 		_EmissiveColor ("Emissive Color", Color) = (1, 1, 1, 1)
 		_AmbientColor ("Ambient Color", Color) = (1, 1, 1, 1)
 		_MySliderValue ("This is Slider", Range(0, 10)) = 2.5
+		_RampTex ("Ramp Texture", 2D) = "white"{}
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -15,6 +17,7 @@
 		float4 	_EmissiveColor;
 		float4 _AmbientColor;
 		float _MySliderValue;
+		sampler2D _RampTex;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -30,11 +33,12 @@
 		
 		inline float4 LightingBasicDiffuse(SurfaceOutput s, fixed3 lightDir, fixed attend)
 		{
-			float difLight = max(0, dot(s.Normal, lightDir));
+			float difLight = dot(s.Normal, lightDir);
 			float hLambert = difLight * 0.5 + 0.5;
+			float3 ramp = tex2D(_RampTex, float2(hLambert)).rgb;
 		
 			float4 col;
-			col.rgb = s.Albedo * _LightColor0.rgb * (hLambert * attend * 2);
+			col.rgb = s.Albedo * _LightColor0.rgb * (ramp);
 			col.a = s.Alpha;
 			return col;
 		}
