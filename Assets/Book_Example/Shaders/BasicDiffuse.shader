@@ -31,9 +31,10 @@
 		inline float4 LightingBasicDiffuse(SurfaceOutput s, fixed3 lightDir, fixed attend)
 		{
 			float difLight = max(0, dot(s.Normal, lightDir));
+			float hLambert = difLight * 0.5 + 0.5;
 		
 			float4 col;
-			col.rgb = s.Albedo * _LightColor0.rgb * (difLight * attend * 2);
+			col.rgb = s.Albedo * _LightColor0.rgb * (hLambert * attend * 2);
 			col.a = s.Alpha;
 			return col;
 		}
