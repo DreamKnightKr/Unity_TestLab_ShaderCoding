@@ -15,9 +15,9 @@
 		
 		// Get Value from "Properies" block
 		sampler2D _MainTex;
-		fixed _TexWidth;
-		fixed _CellAmount;
-		fixed _Speed;
+		float _TexWidth;
+		float _CellAmount;
+		float _Speed;
 		
 		struct Input {
 			float2 uv_MainTex;
@@ -35,7 +35,7 @@
 			timeVal = ceil(timeVal);
 			
 			float xValue = spriteUV.x;
-			xValue += cellUVPercentage * timeVal + _CellAmount;
+			xValue += cellUVPercentage * timeVal * _CellAmount;
 			xValue *= cellUVPercentage;
 			
 			spriteUV = float2(xValue, spriteUV.y);
