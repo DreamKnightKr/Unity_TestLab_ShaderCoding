@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Scrolling
-  m_Shader: {fileID: 4800000, guid: 0e52e59342f094042acc491c52ee1c1d, type: 3}
+  m_Name: SpriteSheetAnimation
+  m_Shader: {fileID: 4800000, guid: 0d4b24a79c1684adc810520dc889af86, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 74f21432cc56444cc88c495f5aa4c1ca, type: 3}
+          m_Texture: {fileID: 2800000, guid: f57a38fd7f9734fb3bc5d18b5d168412, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -133,11 +133,11 @@ Material:
       data:
         first:
           name: _ScrollXSpeed
-        second: 1.32000005
+        second: 0
       data:
         first:
           name: _ScrollYSpeed
-        second: 2.41000009
+        second: 0
       data:
         first:
           name: _Stencil
@@ -162,6 +162,18 @@ Material:
         first:
           name: _ColorMask
         second: 15
+      data:
+        first:
+          name: _TexWidth
+        second: 0
+      data:
+        first:
+          name: _CellAmount
+        second: 0
+      data:
+        first:
+          name: _Speed
+        second: 12
     m_Colors:
       data:
         first:
