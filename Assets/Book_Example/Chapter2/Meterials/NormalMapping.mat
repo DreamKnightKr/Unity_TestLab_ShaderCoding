@@ -216,6 +216,10 @@ Material:
         first:
           name: _Speed
         second: 12
+      data:
+        first:
+          name: _NormalIntensity
+        second: 1.53999996
     m_Colors:
       data:
         first:
