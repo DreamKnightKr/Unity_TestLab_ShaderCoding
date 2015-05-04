@@ -55,7 +55,7 @@
 			float4 finalColor;
 			finalColor = lerp(rTexData, gTexData, blendData.g);
 			finalColor = lerp(finalColor, bTexData, blendData.b);
-			finalColor = lerp(finalColor, aTexData, blendData.a);
+			//finalColor = lerp(finalColor, aTexData, blendData.a);
 			finalColor.a = 1.0;
 
 			// 터레인이 가진 색조를 더한다.

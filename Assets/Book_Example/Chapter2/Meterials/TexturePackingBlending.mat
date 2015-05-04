@@ -77,6 +77,41 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 3b975b87c7db0491aa35497ac0e675a1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _GTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 1cf43909988b5485d871d8c0115d5088, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 2de856c008e59467c8393551311d4d56, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ATexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 2b6b42188b62c43ddaffdc2dbd1bcd4b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BlendTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 66886ff6f756541c0902c80cab31852f, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -190,4 +225,12 @@ Material:
       data:
         first:
           name: _MainTint
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _ColorA
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _ColorB
         second: {r: 1, g: 1, b: 1, a: 1}
