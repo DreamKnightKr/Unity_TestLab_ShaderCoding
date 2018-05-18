@@ -1,4 +1,6 @@
-﻿Shader "Cg shader using blending 2Pass" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Cg shader using blending 2Pass" {
 	Properties {
 		_ColorMain ("color near to point", Color) = (0.5, 0.5, 0.5, 0.5)
 		[Enum(UnityEngine.Rendering.BlendMode)] _BlendSrc ("Src Blend mode", Float) = 1
@@ -21,7 +23,7 @@
  
          float4 vert(float4 vertexPos : POSITION) : SV_POSITION 
          {
-            return mul(UNITY_MATRIX_MVP, vertexPos);
+            return UnityObjectToClipPos(vertexPos);
          }
  
          float4 frag(void) : COLOR 
@@ -45,7 +47,7 @@
  
          float4 vert(float4 vertexPos : POSITION) : SV_POSITION 
          {
-            return mul(UNITY_MATRIX_MVP, vertexPos);
+            return UnityObjectToClipPos(vertexPos);
          }
  
          float4 frag(void) : COLOR 

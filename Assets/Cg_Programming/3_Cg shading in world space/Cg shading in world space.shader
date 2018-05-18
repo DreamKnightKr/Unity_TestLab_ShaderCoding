@@ -1,4 +1,6 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
 Shader "Cg shading in world space" {
 Properties {
@@ -36,7 +38,7 @@ Properties {
          {
             vertexOutput output; 
  
-            output.pos =  mul(UNITY_MATRIX_MVP, input.vertex);
+            output.pos =  UnityObjectToClipPos(input.vertex);
             output.position_in_world_space = 
                mul(unity_ObjectToWorld, input.vertex);
             return output;

@@ -1,4 +1,6 @@
-﻿Shader "Cg shader using discard" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Cg shader using discard" {
    SubShader {
       Pass {
          Cull Off // turn off triangle culling, alternatives are:
@@ -24,7 +26,7 @@
          {
             vertexOutput output;
  
-            output.pos =  mul(UNITY_MATRIX_MVP, input.vertex);
+            output.pos =  UnityObjectToClipPos(input.vertex);
             output.posInObjectCoords = mul(unity_ObjectToWorld, input.vertex);
             output.posInObjectCoords = mul(_matrixTemp, output.posInObjectCoords);
 

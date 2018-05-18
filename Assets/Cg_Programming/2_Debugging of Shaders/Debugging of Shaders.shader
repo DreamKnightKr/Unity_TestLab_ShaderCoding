@@ -1,4 +1,6 @@
-﻿Shader "Cg shader with all built-in vertex input parameters" { 
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Cg shader with all built-in vertex input parameters" { 
    SubShader { 
       Pass { 
          CGPROGRAM 
@@ -16,7 +18,7 @@
          {
             vertexOutput output;
  
-            output.pos =  mul(UNITY_MATRIX_MVP, input.vertex);
+            output.pos =  UnityObjectToClipPos(input.vertex);
             output.col = radians(input.texcoord);
 
             return output;
